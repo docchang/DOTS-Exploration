@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 1482466083}
   - component: {fileID: 1482466082}
   m_Layer: 0
-  m_Name: ConvertedSubScene
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
