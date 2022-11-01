@@ -26,7 +26,7 @@ public partial class NewDestinationSystem : SystemBase
     {
         var randomArray = randomSystem.RandomArray;
 
-		//float3 gridSize = spawnData.spread * spawnData.gridSize;
+		var maxDestValue = spawnData.gridSize * spawnData.spread;
 
 		Entities
 			.WithNativeDisableParallelForRestriction(randomArray)
@@ -38,10 +38,9 @@ public partial class NewDestinationSystem : SystemBase
 			{
                 var random = randomArray[nativeThreadIndex];
 
-				//destinaion.Value.x = random.NextFloat(0, gridSize.x);
-				//destinaion.Value.y = random.NextFloat(0, gridSize.y);
-				//destinaion.Value.z = random.NextFloat(0, gridSize.z);
-
+				//destinaion.Value.x = random.NextFloat(0, maxDestValue.x);
+				//destinaion.Value.y = random.NextFloat(0, maxDestValue.y);
+				//destinaion.Value.z = random.NextFloat(0, maxDestValue.z);
 
 				destinaion.Value.x = random.NextFloat(0, 5 * 50);
 				//destinaion.Value.y = random.NextFloat(0, 5 * 5);

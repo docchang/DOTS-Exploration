@@ -13,15 +13,21 @@ namespace TMG.SpaceShooter
     {
         private PlayerInputKeys _playerInputKeys;
 
+        private Camera _mainCamera;
+
         protected override void OnStartRunning()
         {
             _playerInputKeys = GetSingleton<PlayerInputKeys>();
+            _mainCamera = Camera.main;
         }
 
         protected override void OnUpdate()
         {
             var newPlayerInput = GetPlayerMoveInput();
             SetSingleton(newPlayerInput);
+
+            var curWorldMousePos = GetWorldMousePosition();
+            SetSingleton(curWorldMousePos);
         }
 
         private PlayerMoveInput GetPlayerMoveInput()
@@ -64,5 +70,17 @@ namespace TMG.SpaceShooter
             };
 
         }
+
+        private WorldMousePosition GetWorldMousePosition()
+		{
+            var mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _mainCamera.transform.position.y);
+
+            var worldMousePos = _mainCamera.ScreenToWorldPoint(mousePos);
+
+            return new WorldMousePosition
+            {
+                Value = worldMousePos
+            };
+		}
     }
 }

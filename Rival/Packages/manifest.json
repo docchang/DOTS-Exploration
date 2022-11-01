@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.gamedevpro.dmotion": "https://github.com/gamedev-pro/dmotion.git",
+    "com.latios.latiosframework": "https://github.com/Dreaming381/Latios-Framework.git",
     "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "1.17.2",
     "com.unity.entities": "0.51.1-preview.21",

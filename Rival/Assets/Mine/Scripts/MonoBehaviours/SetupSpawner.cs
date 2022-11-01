@@ -47,7 +47,7 @@ public class SetupSpawner : MonoBehaviour, IConvertGameObjectToEntity
 				{
 					var instance = entityManager.Instantiate(entity);
 
-					float3 position = new float3(x * spread, 0, z * spread);
+					float3 position = new float3(x, noise.cnoise(new float2(x,z)), z) * spread;
 
 					entityManager.SetComponentData<Translation>(instance, new Translation { Value = position });
 
